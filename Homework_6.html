@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework_6</title>
+    <link rel="stylesheet" href="./css/Homework_6.css" />
+  </head>
+  <body>
+    <h1>Форма зворотного зв'язку</h1>
+    <form id="feedback-form">
+      <label for="name">Ім'я:</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Електронна пошта:</label>
+      <input type="email" id="email" required />
+
+      <label for="message">Повідомлення:</label>
+      <textarea id="message" required></textarea>
+
+      <button type="submit">Відправити</button>
+    </form>
+    <div id="success-message" class="hidden">
+      Дякуємо! Ваше повідомлення надіслано.
+    </div>
+
+    <script src="./js/Homework_6.js"></script>
+  </body>
+</html>
