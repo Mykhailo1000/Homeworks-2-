@@ -1,20 +1,20 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const gallery = document.querySelector('.gallery');
-    const modal = document.getElementById('myModal');
-    const modalImg = document.getElementById('modalImage');
-    const closeBtn = document.querySelector('.close');
+const modal = document.getElementById("modal");
+const modalImage = document.getElementById("modal-img");
+const close = document.querySelector(".close");
 
-    gallery.addEventListener('click', (event) => {
-        if (event.target.tagName === 'IMG') {
-            const imgSrc = event.target.src;
-            modalImg.src = imgSrc;
-            modal.style.display = 'flex'; 
-        }
+document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', (event) => {
+        modal.style.display = 'block';
+        modalImage.src = event.target.src;
     });
+});
 
-    modal.addEventListener('click', (event) => {
-        if (event.target === modal || event.target === closeBtn) {
-            modal.style.display = 'none';
-        }
-    });
+close.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
 });

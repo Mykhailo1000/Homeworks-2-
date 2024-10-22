@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework_2</title>
+    <title>Homework_1</title>
     <link rel="stylesheet" href="./css/homework_1.css">
 </head>
 <body>
-    <li class="gallery__item">
-        <a
-          class="gallery__link"
-          href="https://cdn.pixabay.com/photo/2010/12/13/10/13/tulips-2546_1280.jpg"
-        >
-          <img
-            class="gallery__image"
-            src="https://cdn.pixabay.com/photo/2010/12/13/10/13/tulips-2546__340.jpg"
-            data-source="https://cdn.pixabay.com/photo/2010/12/13/10/13/tulips-2546_1280.jpg"
-            alt="Tulips"
-          />
-        </a>
-      </li>
+    <div class="gallery">
+        <img src="./img/image1.jpeg" alt="Зображення 1" class="gallery-item">
+        <img src="./img/image2.jpeg" alt="Зображення 2" class="gallery-item">
+        <img src="./img/image3.jpeg" alt="Зображення 3" class="gallery-item">
+        <img src="./img/image4.jpg" alt="Зображення 4" class="gallery-item">
+        <img src="./img/image5.jpg" alt="Зображення 5" class="gallery-item">
+    </div>
 
-    <script src="./js/Homework_1.js"></script>
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script src="js/Homework_1.js"></script>
 </body>
 </html>
