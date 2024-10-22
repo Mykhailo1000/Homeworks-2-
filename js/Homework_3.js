@@ -1,29 +1,28 @@
-
-const images = document.querySelectorAll('.lazy-load');
-
-const loadImage = (image) => {
-    const src = image.getAttribute('data-src');
-    image.src = src; 
-    image.onload = () => {
-        image.classList.add('loaded'); 
+function lazyLoadImages() {
+    const images = document.querySelectorAll('img.lazy-load');
+    
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
     };
-};
 
-const options = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1 
-};
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.getAttribute('data-src');
+                img.onload = () => {
+                    img.classList.add('loaded');
+                };
+                observer.unobserve(img);
+            }
+        });
+    }, options);
 
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            loadImage(entry.target); 
-            observer.unobserve(entry.target); 
-        }
+    images.forEach(image => {
+        observer.observe(image);
     });
-}, options);
+}
 
-images.forEach(image => {
-    observer.observe(image);
-});
+document.addEventListener('DOMContentLoaded', lazyLoadImages);
